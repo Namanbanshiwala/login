@@ -29,9 +29,7 @@ public class login {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3307/mysql","root","");
             System.out.println("Connected to the database!"); 
-            
-          //  String query="select * fron bank where username and password";
-          //String query="insert into bank where(username,password) values(?,?)";
+             
           String query = "SELECT * FROM bank WHERE username = ? AND password = ?"; 
              
             try (PreparedStatement statement = con.prepareStatement(query))
